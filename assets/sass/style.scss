@@ -239,13 +239,16 @@ header {
 }
 
 .free {
+    // height: 80vh;
+    margin-top: 150px;
     padding: 0 150px;
     display: flex;
     flex-direction: column;
     align-items: end;
+    justify-content: center;
 
     &__img {
-        left: -25% !important;
+        left: -20% !important;
     }
 }
 
