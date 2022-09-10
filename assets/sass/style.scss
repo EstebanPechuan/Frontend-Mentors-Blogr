@@ -29,7 +29,13 @@ li {
 a {
     text-decoration: none;
     color: inherit;
+    font-family: $ff-ubuntu !important;
+    font-weight: 500;
     cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 .btn {
     padding: 10px 40px;
@@ -41,10 +47,23 @@ a {
 .btn-fill {
     background: #fff;
     color: $light-red;
+    
+    &:hover {
+        background: #fff4;
+        border-color: #fff0;
+        color: #fff;
+        text-decoration: none;
+    }
 }
 .btn-ghost {
     background: transparent;
     color: #fff;
+    
+    &:hover {
+        background: #fff;
+        color: $light-red;
+        text-decoration: none;
+    }
 }
 
 header {
@@ -60,20 +79,67 @@ header {
     nav {
         width: 100%;
 
+        .logo {
+            a:hover {
+                text-decoration: none !important;
+            }
+        }
+
         .menu {
             color: #fffd;
             display: flex;
             align-items: center;
             gap: 30px;
+
+            li {
+                cursor: pointer;
+                position: relative;
+
+                img {
+                    margin-left: 5px;
+                }
+
+                &:hover .submenu {
+                    display: flex;
+                }
+
+                .submenu {
+                    min-width: 150px;
+                    padding: 20px 20px;
+                    background: #fff;
+                    color: #000;
+                    border-radius: 4px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    position: absolute;
+                    left: -20px;
+                    display: none;
+
+                    a {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: $very-dark-black-blue;
+
+                        &:hover {
+                            font-weight: 700;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
             
-            li:nth-child(4) {
+            & > li:nth-child(4) {
                 margin-left: auto;
             }
             
-            a {
-                font-family: $ff-ubuntu !important;
-                font-weight: 500;
+            & > li:nth-child(5) {
+                &:hover a {
+                    text-decoration: none !important;
+                }
             }
+            
+            
         }
     }
 
@@ -255,7 +321,7 @@ footer {
             font-family: $ff-ubuntu;
             
             a {
-                font-family: $ff-ubuntu;
+                font-weight: 400;
                 opacity: 0.7;
             }
         }
